@@ -11,7 +11,7 @@ import {
 } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { NgxsModule } from '@ngxs/store';
-// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { TodoState } from './todo-state';
 
 @NgModule({
@@ -26,7 +26,7 @@ import { TodoState } from './todo-state';
     NgxsModule.forRoot([TodoState], {
       developmentMode: !environment.production,
     }),
-    // NgxsStoragePluginModule.forRoot({ keys: '*' }),
+    NgxsStoragePluginModule.forRoot({ key: ['todo'] }),
   ],
   providers: [
     {
