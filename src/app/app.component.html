@@ -19,7 +19,8 @@
         [checked]="item.isDone"
         (change)="toggleItem(item)"
       />
-      {{ item.title }}
+      <p>{{ item.title }}</p>
+      <button (click)="deleteItem(item.id)">X</button>
     </div>
   </li>
 </ul>

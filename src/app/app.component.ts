@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Select, StateContext, Store } from '@ngxs/store';
-import { AddItemAction, ToggleItemAction } from './todo-actions';
+import {
+  AddItemAction,
+  DeleteItemAction,
+  ToggleItemAction,
+} from './todo-actions';
 import { TodoStateModel } from './todo-state';
 import { TodoSelectors } from './todo-selectors';
 import { Observable } from 'rxjs';
@@ -40,5 +44,9 @@ export class AppComponent {
 
   toggleItem(toDoItem: TodoModel): void {
     this.store.dispatch(new ToggleItemAction(toDoItem.id));
+  }
+
+  deleteItem(id: number) {
+    this.store.dispatch(new DeleteItemAction(id));
   }
 }
